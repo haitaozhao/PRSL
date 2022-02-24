@@ -1,5 +1,6 @@
 # read the data
 
+```python
 import csv
 import numpy as np
 
@@ -14,3 +15,5 @@ with open('label.csv', newline='') as f:
     l = list(reader)
 tmp = l[0]
 label = np.array([float(item) for item in tmp])
+```
+
