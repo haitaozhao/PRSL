@@ -1,4 +1,3 @@
-from pdb import post_mortem
 import numpy as np
 import scipy.stats as st
 def my_testnb(xt,pw,my_mean,my_std,NumOfClass,NumVar):
