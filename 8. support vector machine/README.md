@@ -21,7 +21,7 @@
 * 运行下列代码
 
 ```
-python demosvm.py
+python demo_svm.py
 ```
 
 
