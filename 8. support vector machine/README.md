@@ -24,7 +24,7 @@ python demo_svm.py
 ```
 
 
-### 3.3、数据准备及模型训练
+### 3.2、数据准备及模型训练
 
 * 可以参照 images_preprocess.ipynb
 
