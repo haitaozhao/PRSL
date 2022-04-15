@@ -16,8 +16,7 @@
 
 ### 3.1、电脑运行
 
-* [下载模型](https://github.com/enpeizhao/CVprojects/releases/tag/Models)`face_mask_model.h5`，放到`data目录下`；
-* [下载模型](https://github.com/enpeizhao/CVprojects/releases/tag/Models)`res10_300x300_ssd_iter_140000.caffemodel`，放到`weights`目录下；
+
 * 运行下列代码
 
 ```
