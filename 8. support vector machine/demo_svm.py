@@ -137,7 +137,6 @@ class MaskDetection:
                     #    img_input = blob_norm.reshape(1,100,100,3)
                         img_blobg = cv2.cvtColor(blob_norm,cv2.COLOR_BGR2GRAY)
                         fd = hog(img_blobg, orientations=8, pixels_per_cell=(8, 8),cells_per_block=(1, 1))
-                        # result = self.mask_model.predict(img_input)
 
                         predictLabels = self.cls.predict(fd.reshape(1,-1))
 
