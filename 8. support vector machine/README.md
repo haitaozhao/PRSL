@@ -4,7 +4,7 @@
 
 ## 一、硬件：
 
-* PC端运行：Windows10或11（无需GPU，有最好）或MacOS 都测试可行
+* PC端运行：Windows10(无需GPU)
 * USB RGB 摄像头
 
 ## 二、软件：
