@@ -7,16 +7,6 @@ u_train = load('u1.base');
 R_train = sparse(943,1682);
 R_train(sub2ind(size(R_train),u_train(:,1),u_train(:,2))) = u_train(:,3);
 RR_train = full(R_train);
-% [idx,idy] = find(RR_train == 0);
-% for i = 1 : 1682
-%     temp = RR_train(:,i);
-%     temp_mean = mean(temp(temp>0));
-%     RR_train(:,i) = temp - temp_mean;
-% end
-% 
-% for i = 1 : length(idx)
-%     RR_train(idx(i),idy(i)) = 0;
-% end
 
 [U,s,V] = svd(RR_train,'econ');
 
@@ -36,7 +26,6 @@ for i = 1:20000
         Temp(:,j) = Temp(:,j)/norm(Temp(:,j));
     end
     c = Z(:,item)'/norm(Z(:,item))*Temp;
-    c = exp(-)
     [~,d] = sort(c,'descend');
     u_test(i,1) = user;
     u_test(i,2) = item;
