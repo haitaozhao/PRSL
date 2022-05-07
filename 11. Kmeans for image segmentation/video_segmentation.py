@@ -1,6 +1,6 @@
 
 import cv2
-import cvzone
+import cvzone  # mediapipe
 from cvzone.SelfiSegmentationModule import SelfiSegmentation
 import numpy as np
 
@@ -16,23 +16,23 @@ bk_image = cv2.resize(bk_image,[wid,hei])
 
 while True:
     success,img = cap.read()
-    imgOut = segmentor.removeBG(img,bk_image,threshold=0.9)
+    imgOut = segmentor.removeBG(img,(255,0,0),threshold=0.9)
 
-    # # foreground clustering
-    # vectorized = imgOut.reshape((-1,3))
-    # vectorized = np.float32(vectorized)
+    # foreground clustering
+    vectorized = imgOut.reshape((-1,3))
+    vectorized = np.float32(vectorized)
     
-    # # perform kmeans clustering
-    # ## 停止条件
-    # criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1)
-    # ## 初始化中心数和尝试的次数
-    # K = 3
-    # attempts=4
-    # _,label,center = cv2.kmeans(vectorized,K,None,criteria,attempts,cv2.KMEANS_PP_CENTERS)
-    # center = np.uint8(center)
-    # label.flatten().shape,center.shape
-    # res = center[label.flatten()]
-    # imgOut = res.reshape((imgOut.shape))
+    # perform kmeans clustering
+    ## 停止条件
+    criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1)
+    ## 初始化中心数和尝试的次数
+    K = 3
+    attempts=4
+    _,label,center = cv2.kmeans(vectorized,K,None,criteria,attempts,cv2.KMEANS_PP_CENTERS)
+    center = np.uint8(center)
+    label.flatten().shape,center.shape
+    res = center[label.flatten()]
+    imgOut = res.reshape((imgOut.shape))
     
     
     imgStacked = cvzone.stackImages([img,imgOut],2,1)
