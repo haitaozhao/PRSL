@@ -16,7 +16,7 @@ by = y==1;
 inx = by ~= bTemp';
 error = [];
 while sum(inx)> 0 & t<10000
-    deltaW =  Data(inx,:)'* y(inx)';
+    deltaW =  Data(inx,:)'* y(inx)'; 
     wt = w0 + r* deltaW;
     t = t + 1;
     error(t) = - (Data(inx,:)*w0/norm(w0))'* y(inx)';
