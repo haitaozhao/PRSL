@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "python",
+            "name": "image segmentation with kmeans",
+            "file": "video_segmentation.py",
+            "arguments": [],
+        },
+        
+    ]
+}

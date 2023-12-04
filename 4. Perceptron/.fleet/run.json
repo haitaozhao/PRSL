@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "python",
+            "name": "Python configuration",
+            "file": "MyPCT.py",
+            "arguments": ["first"],
+        },
+        
+    ]
+}

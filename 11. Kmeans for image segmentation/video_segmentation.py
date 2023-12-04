@@ -10,13 +10,13 @@ hei = 240
 cap.set(3,wid) # 设置显示宽度
 cap.set(4,hei) # 设置显示高度
 segmentor = SelfiSegmentation()
-fpsReader = cvzone.FPS()
+#fpsReader = cvzone.FPS()
 bk_image = cv2.imread(".\\images\\background.png")
 bk_image = cv2.resize(bk_image,[wid,hei])
 
 while True:
     success,img = cap.read()
-    imgOut = segmentor.removeBG(img,(255,0,0),threshold=0.9)
+    imgOut = segmentor.removeBG(img,(255,0,0))
 
     # foreground clustering
     vectorized = imgOut.reshape((-1,3))
@@ -36,7 +36,7 @@ while True:
     
     
     imgStacked = cvzone.stackImages([img,imgOut],2,1)
-    _,imgStacked = fpsReader.update(imgStacked,color = (0,0,255))
+    # _,imgStacked = fpsReader.update(imgStacked,color = (0,0,255))
     
     cv2.imshow("Image",imgStacked)
     key = cv2.waitKey(1)

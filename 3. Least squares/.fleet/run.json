@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "python",
+            "name": "my least squares",
+            "file": "least_squares_GD.py",
+            "arguments": [],
+        },
+        
+    ]
+}
